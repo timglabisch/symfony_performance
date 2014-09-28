@@ -1,0 +1,20 @@
+symfony:
+  build: symfony/
+  volumes:
+    - ./symfony:/var/www
+
+nginx:
+  build: nginx/
+  ports:
+    - 8080:80
+  links:
+    - fpm
+  volumes_from:
+    - symfony
+  environment:
+    <APP_SERVER_NAME>: dev-machine
+
+fpm:
+  build: php-fpm/
+  volumes_from:
+    - symfony
