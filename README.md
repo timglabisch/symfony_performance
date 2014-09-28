@@ -4,7 +4,7 @@ A symfony project utilizing Docker based on PHP-FPM and nginx.
 
 ## Running
 
-You can run the Docker environment using fig:
+You can run the Docker environment using [fig](http://www.fig.sh/):
 
     $ fig up
 
