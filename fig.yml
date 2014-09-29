@@ -18,3 +18,5 @@ fpm:
   build: php-fpm/
   volumes_from:
     - symfony
+  environment:
+    APP_SERVER_NAME: dev-machine
