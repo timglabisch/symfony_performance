@@ -10,5 +10,5 @@ You can run the Docker environment using [fig](http://www.fig.sh/):
 
 You can run one-shot command inside the `symfony` service container:
 
-    $ fig run --rm composer install
-    $ fig run --rm php app/console cache:clear
+    $ fig run --rm symfony composer install
+    $ fig run --rm symfony php app/console cache:clear
