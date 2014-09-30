@@ -18,7 +18,5 @@ ADD symfony_environment.sh /etc/profile.d/symfony_environment.sh
 
 WORKDIR /var/www
 
-#ENTRYPOINT /bin/sh -l -c "$*"
-#CMD ["echo", "hello"]
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["echo", "hello"]
