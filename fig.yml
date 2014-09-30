@@ -1,5 +1,7 @@
 symfony:
   build: symfony/
+  links:
+    - redis
   volumes:
     - ./symfony:/var/www
 
@@ -16,7 +18,12 @@ nginx:
 
 fpm:
   build: php-fpm/
+  links:
+    - redis
   volumes_from:
     - symfony
   environment:
     APP_SERVER_NAME: dev-machine
+
+redis:
+  image: redis:2.8.13
