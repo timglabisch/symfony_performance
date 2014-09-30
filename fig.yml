@@ -3,7 +3,7 @@ symfony:
   links:
     - redis
   volumes:
-    - ./symfony:/var/www
+    - ./symfony/code:/var/www
 
 nginx:
   build: nginx/

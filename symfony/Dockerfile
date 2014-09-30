@@ -13,7 +13,7 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 ADD entrypoint.sh /entrypoint.sh
-ADD . /var/www
+ADD ./code /var/www
 ADD symfony_environment.sh /etc/profile.d/symfony_environment.sh
 
 WORKDIR /var/www
