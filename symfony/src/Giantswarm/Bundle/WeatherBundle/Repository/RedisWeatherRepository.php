@@ -18,8 +18,10 @@ class RedisWeatherRepository {
 
         $temperatures = [];
         foreach($temperatureData as $celsius) {
-            $temperatures = new Temperature($city, $celsius);
+            $temperatures[] = new Temperature($city, $celsius);
         }
+
+        return $temperatures;
     }
 
     public function addTemperature(Temperature $temperature) {
