@@ -1,4 +1,4 @@
 #!/bin/bash
 
-exec rm -rf /var/www/app/cache/*
-exec /bin/bash -l -c "$*"
+rm -rf /var/www/app/cache/*
+/bin/bash -l -c "$*"
