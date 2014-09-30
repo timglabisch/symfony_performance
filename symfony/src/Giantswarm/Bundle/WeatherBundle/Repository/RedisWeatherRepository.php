@@ -25,6 +25,6 @@ class RedisWeatherRepository {
     }
 
     public function addTemperature(Temperature $temperature) {
-        $this->client->lpush($temperature->getCity(), [$temperature->getCelsius()]);
+        $this->client->lpush('temperatures/' . $temperature->getCity(), [$temperature->getCelsius()]);
     }
 }
