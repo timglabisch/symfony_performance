@@ -2,6 +2,8 @@ symfony:
   build: symfony/
   links:
     - redis
+    - mysql
+    - elasticsearch
   volumes:
     - ./symfony/code:/var/www
 
@@ -27,3 +29,9 @@ fpm:
 
 redis:
   image: redis:2.8.13
+
+mysql:
+  image: mysql:5.7.5
+
+elasticsearch:
+  image: dockerfile/elasticsearch:latest
