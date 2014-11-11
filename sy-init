@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+git clone https://github.com/timglabisch/symfony-docker-example ./ &&
+sudo fig run --rm symfony composer install --prefer-source &&
+chmod 777 symfony/code/cache &&
+chmod 777 symfony/code/logs &&
+sudo fig run --rm symfony generate:bundle &&
+sudo fig up
