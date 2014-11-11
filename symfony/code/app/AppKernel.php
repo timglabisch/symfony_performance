@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
             new Giantswarm\Bundle\WeatherBundle\GiantswarmWeatherBundle(),
+            new Tg\Bundle\HelloProjectBundle\TgHelloProjectBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

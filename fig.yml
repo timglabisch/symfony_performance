@@ -21,7 +21,9 @@ nginx:
 fpm:
   build: php-fpm/
   links:
-    - redis
+    - mysql:mysql
+    - redis:redis
+    - elasticsearch:elasticsearch
   volumes_from:
     - symfony
   environment:
@@ -31,7 +33,10 @@ redis:
   image: redis:2.8.13
 
 mysql:
-  image: mysql:5.7.5
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: symfony
 
 elasticsearch:
   image: dockerfile/elasticsearch:latest

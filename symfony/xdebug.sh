@@ -1,0 +1,1 @@
+export XDEBUG_CONFIG="idekey=PHPSTORM"; export PHP_IDE_CONFIG="serverName=`echo $HOSTNAME`"; php -d xdebug.remote_enable=1 -d xdebug.remote_host=`ip route | grep default | awk '{ print $3 }'` $@

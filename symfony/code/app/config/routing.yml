@@ -3,3 +3,7 @@ giantswarm_weather:
     type:     annotation
     prefix:   /
 
+tg_hello:
+    resource: "@TgHelloProjectBundle/Controller"
+    type:     annotation
+    prefix:   /

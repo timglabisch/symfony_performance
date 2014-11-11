@@ -8,7 +8,12 @@ RUN apt-get update && apt-get install -y \
     php5-cli \
     php5-json \
     php5-mysql \
-    php5-intl
+    php5-intl \
+    php5-dev \
+    php5-xdebug
+
+RUN echo 2
+ADD xdebug.sh /bin/xdebug
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
