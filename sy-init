@@ -2,8 +2,11 @@
 
 
 git clone https://github.com/timglabisch/symfony-docker-example ./ &&
-sudo fig run --rm symfony composer install --prefer-source &&
-chmod 777 symfony/code/cache &&
-chmod 777 symfony/code/logs &&
-sudo fig run --rm symfony generate:bundle &&
+sudo fig build &&
+sudo fig run --rm symfony composer install --prefer-source --no-interaction &&
+sudo chmod -R 777 symfony/code/app/cache &&
+sudo chmod -R 777 symfony/code/app/logs &&
+sudo fig run --rm symfony app/console generate:bundle &&
+sudo chmod -R 777 symfony/code/app/cache &&
+sudo chmod -R 777 symfony/code/app/logs &&
 sudo fig up
