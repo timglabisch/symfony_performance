@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     php5-dev \
     php5-xdebug
 
-RUN echo 3
+RUN echo 4
 ADD xdebug.sh /bin/xdebug
 
 RUN curl -sS https://getcomposer.org/installer | php
