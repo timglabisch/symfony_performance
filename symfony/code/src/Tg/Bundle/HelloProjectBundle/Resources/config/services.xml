@@ -38,6 +38,11 @@
             <argument type="string">%kafka_port%</argument>
         </service>
 
+        <service id="tg.hello_project_bundle.check.silex" class="Tg\Bundle\HelloProjectBundle\Checks\SilexMicroserviceCheck">
+            <argument type="string">%silex_host%</argument>
+            <argument type="string">%silex_port%</argument>
+        </service>
+
         <service id="tg.hello_project_bundle.controller.hello" class="Tg\Bundle\HelloProjectBundle\Controller\HelloController">
             <argument type="collection">
                 <argument type="service" id="tg.hello_project_bundle.check.redis"/>
@@ -46,6 +51,7 @@
                 <argument type="service" id="tg.hello_project_bundle.check.mongodb"/>
                 <argument type="service" id="tg.hello_project_bundle.check.postgres"/>
                 <argument type="service" id="tg.hello_project_bundle.check.kafka"/>
+                <argument type="service" id="tg.hello_project_bundle.check.silex"/>
             </argument>
         </service>
     </services>

@@ -11,6 +11,13 @@ symfony:
   volumes:
     - ./symfony/code:/var/www
 
+silex:
+  build: silex_microservice/
+  expose:
+    - 5560
+  volumes:
+    - ./silex_microservice/code:/opt/silex
+
 fpm:
   build: php-fpm/
   links:
@@ -21,6 +28,7 @@ fpm:
     - postgres
     - zookeeper
     - kafka
+    - silex
   volumes_from:
     - symfony
   environment:

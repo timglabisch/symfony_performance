@@ -26,6 +26,9 @@ echo "env[SYMFONY__postgres_port] = ${POSTGRES_PORT_5432_TCP_PORT}" >> /etc/php5
 echo "env[SYMFONY__kafka_host] = ${KAFKA_PORT_9092_TCP_ADDR}" >> /etc/php5/fpm/pool.d/www.conf
 echo "env[SYMFONY__kafka_port] = ${KAFKA_PORT_9092_TCP_PORT}" >> /etc/php5/fpm/pool.d/www.conf
 
+echo "env[SYMFONY__silex_host] = ${SILEX_PORT_5560_TCP_ADDR}" >> /etc/php5/fpm/pool.d/www.conf
+echo "env[SYMFONY__silex_port] = ${SILEX_PORT_5560_TCP_PORT}" >> /etc/php5/fpm/pool.d/www.conf
+
 
 if [ "$*" == "/bin/bash" ]; then
     exec /usr/sbin/php5-fpm --nodaemonize

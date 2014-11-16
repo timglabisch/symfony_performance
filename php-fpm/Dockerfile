@@ -12,12 +12,17 @@ RUN apt-get update && apt-get install -y \
     php5-xdebug \
     php5-mongo \
     php5-pgsql \
-    php5-curl && \
-    pecl install --force xhprof && \
+    php5-curl \
+    pkg-config \
+    libzmq-dev && \
     apt-get autoremove && \
-    echo "extension=xhprof.so" > /etc/php5/fpm/conf.d/xhprof.ini
+    pecl install --force xhprof && \
+    echo "extension=xhprof.so" > /etc/php5/fpm/conf.d/xhprof.ini && \
+    pecl install --force zmq-beta && \
+    echo "extension=zmq.so" > /etc/php5/fpm/conf.d/zmq.ini
 
-RUN echo 19
+
+RUN echo 21
 
 ADD start.sh /start.sh
 
