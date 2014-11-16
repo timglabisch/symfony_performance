@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
     php5-mysql \
     php5-intl \
     php5-dev \
+    php5-mongo \
+    php5-pgsql \
     php5-xdebug
 
 RUN echo 5

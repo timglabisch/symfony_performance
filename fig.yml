@@ -4,8 +4,27 @@ symfony:
     - redis
     - mysql
     - elasticsearch
+    - mongodb
+    - postgres
+    - zookeeper
+    - kafka
   volumes:
     - ./symfony/code:/var/www
+
+fpm:
+  build: php-fpm/
+  links:
+    - mysql
+    - redis
+    - elasticsearch
+    - mongodb
+    - postgres
+    - zookeeper
+    - kafka
+  volumes_from:
+    - symfony
+  environment:
+    APP_SERVER_NAME: dev-machine
 
 nginx:
   build: nginx/
@@ -18,19 +37,14 @@ nginx:
   environment:
     <APP_SERVER_NAME>: dev-machine
 
-fpm:
-  build: php-fpm/
-  links:
-    - mysql:mysql
-    - redis:redis
-    - elasticsearch:elasticsearch
-  volumes_from:
-    - symfony
-  environment:
-    APP_SERVER_NAME: dev-machine
-
 redis:
   image: redis:2.8.13
+
+mongodb:
+  image: dockerfile/mongodb
+
+postgres:
+  image: postgres
 
 mysql:
   image: mysql
@@ -40,3 +54,19 @@ mysql:
 
 elasticsearch:
   image: dockerfile/elasticsearch:latest
+
+zookeeper:
+  image: jplock/zookeeper
+  ports:
+    - "2181"
+
+kafka:
+  image: wurstmeister/kafka:0.8.1.1-1
+  ports:
+    - "9092"
+  links:
+    - zookeeper:zk
+  environment:
+    KAFKA_ADVERTISED_HOST_NAME: 192.168.59.103
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock

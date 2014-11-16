@@ -23,11 +23,29 @@
             <argument type="string">%elasticsearch_port%</argument>
         </service>
 
+        <service id="tg.hello_project_bundle.check.mongodb" class="Tg\Bundle\HelloProjectBundle\Checks\MongoCheck">
+            <argument type="string">%mongodb_host%</argument>
+            <argument type="string">%mongodb_port%</argument>
+        </service>
+
+        <service id="tg.hello_project_bundle.check.postgres" class="Tg\Bundle\HelloProjectBundle\Checks\PostgresCheck">
+            <argument type="string">%postgres_host%</argument>
+            <argument type="string">%postgres_port%</argument>
+        </service>
+
+        <service id="tg.hello_project_bundle.check.kafka" class="Tg\Bundle\HelloProjectBundle\Checks\KafkaCheck">
+            <argument type="string">%kafka_host%</argument>
+            <argument type="string">%kafka_port%</argument>
+        </service>
+
         <service id="tg.hello_project_bundle.controller.hello" class="Tg\Bundle\HelloProjectBundle\Controller\HelloController">
             <argument type="collection">
                 <argument type="service" id="tg.hello_project_bundle.check.redis"/>
                 <argument type="service" id="tg.hello_project_bundle.check.mysql"/>
                 <argument type="service" id="tg.hello_project_bundle.check.elasticsearch"/>
+                <argument type="service" id="tg.hello_project_bundle.check.mongodb"/>
+                <argument type="service" id="tg.hello_project_bundle.check.postgres"/>
+                <argument type="service" id="tg.hello_project_bundle.check.kafka"/>
             </argument>
         </service>
     </services>
