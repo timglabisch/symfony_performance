@@ -7,11 +7,11 @@ function_exists() {
 
 echo -e " \e[32m
 
-  mmmm                  m''                                     #
- #'   ' m   m  mmmmm  mm#mm   mmm   m mm   m   m          mmm   # mm
- '#mmm  'm m'  # # #    #    #' '#  #'  #  'm m'         #   '  #'  #
-     '#  #m#   # # #    #    #   #  #   #   #m#           '''m  #   #
- 'mmm#'  '#    # # #    #    '#m#'  #   #   '#      #    'mmm'  #   #
+  mmmm                  m''
+ #'   ' m   m  mmmmm  mm#mm   mmm   m mm   m   m
+ '#mmm  'm m'  # # #    #    #' '#  #'  #  'm m'
+     '#  #m#   # # #    #    #   #  #   #   #m#
+ 'mmm#'  '#    # # #    #    '#m#'  #   #   '#
          m'                                 m'
         ''                                 ''
 "
