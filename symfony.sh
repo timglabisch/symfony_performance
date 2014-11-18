@@ -1,4 +1,4 @@
-#!/bin/bash
+set -e
 
 function_exists() {
     which $1 > /dev/null
