@@ -50,7 +50,8 @@ fi
 
 git clone https://github.com/timglabisch/symfony-docker-example ./ &&
 sudo fig build &&
-sudo fig run --rm symfony composer install --prefer-source --no-interaction &&
+sudo fig run --rm symfonyp composer install --prefer-source --no-interaction &&
+sudo fig run --rm symfonyp composer dump-autoload --optimize &&
 sudo chmod -R 777 symfony/code/app/cache &&
 sudo chmod -R 777 symfony/code/app/logs &&
 sudo fig run --rm symfony app/console generate:bundle &&

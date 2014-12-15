@@ -1,80 +1,22 @@
-symfony:
+symfonyp:
   build: symfony/
-  links:
-    - redis
-    - mysql
-    - elasticsearch
-    - mongodb
-    - postgres
-    - zookeeper
-    - kafka
   volumes:
     - ./symfony/code:/var/www
 
-silex:
-  build: silex_microservice/
-  expose:
-    - 5560
-  volumes:
-    - ./silex_microservice/code:/opt/silex
-
-fpm:
+fpmp:
   build: php-fpm/
-  links:
-    - mysql
-    - redis
-    - elasticsearch
-    - mongodb
-    - postgres
-    - zookeeper
-    - kafka
-    - silex
   volumes_from:
-    - symfony
+    - symfonyp
   environment:
     APP_SERVER_NAME: dev-machine
 
-nginx:
+nginxp:
   build: nginx/
   ports:
     - 8080:80
   links:
-    - fpm
+    - fpmp
   volumes_from:
-    - symfony
+    - symfonyp
   environment:
     <APP_SERVER_NAME>: dev-machine
-
-redis:
-  image: redis:2.8.13
-
-mongodb:
-  image: dockerfile/mongodb
-
-postgres:
-  image: postgres
-
-mysql:
-  image: mysql
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: symfony
-
-elasticsearch:
-  image: dockerfile/elasticsearch:latest
-
-zookeeper:
-  image: jplock/zookeeper
-  ports:
-    - "2181"
-
-kafka:
-  image: wurstmeister/kafka:0.8.1.1-1
-  ports:
-    - "9092"
-  links:
-    - zookeeper:zk
-  environment:
-    KAFKA_ADVERTISED_HOST_NAME: 192.168.59.103
-  volumes:
-    - /var/run/docker.sock:/var/run/docker.sock

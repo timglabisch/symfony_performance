@@ -1,9 +1,3 @@
-giantswarm_weather:
-    resource: "@GiantswarmWeatherBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
-tg_hello:
-    resource: "@TgHelloProjectBundle/Controller"
-    type:     annotation
+tg_microbenchmark:
+    resource: "@TgMicrobenchmarkBundle/Resources/config/routing.xml"
     prefix:   /

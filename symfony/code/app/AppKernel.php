@@ -16,9 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Snc\RedisBundle\SncRedisBundle(),
-            new Giantswarm\Bundle\WeatherBundle\GiantswarmWeatherBundle(),
-            new Tg\Bundle\HelloProjectBundle\TgHelloProjectBundle()
+            new Tg\MicrobenchmarkBundle\TgMicrobenchmarkBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

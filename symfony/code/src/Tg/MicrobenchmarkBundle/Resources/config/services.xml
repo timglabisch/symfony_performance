@@ -4,9 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
+    <!--
     <services>
-        <service id="giantswarm_weather.repository.weather" class="Giantswarm\Bundle\WeatherBundle\Repository\RedisWeatherRepository">
-            <argument type="service" id="snc_redis.default_client" />
+        <service id="tg_microbenchmark.example" class="Tg\MicrobenchmarkBundle\Example">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
         </service>
     </services>
+    -->
 </container>
