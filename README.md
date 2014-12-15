@@ -3,7 +3,7 @@
 ## Running
 Just run:
 
-    git clone [REPO]
+    git clone https://github.com/timglabisch/symfony_performance
     sudo fig build
     sudo fig run --rm symfonyp composer install --prefer-source --no-interaction
     sudo fig run --rm symfonyp composer dump-autoload --optimize
@@ -33,7 +33,7 @@ Just run:
 
 
 
-# Running on my System (AMD Phenom(tm) II X4 955 Processor, MemTotal: 16433348 kB) using Docker + Fig.
+## Running on my System (AMD Phenom(tm) II X4 955 Processor, MemTotal: 16433348 kB) using Docker + Fig.
 
     symfony_performance git:(master) ✗ ab -n 5000 -c 20 http://127.0.0.1:8080/standard.php
     Requests per second:    328.84 [#/sec] (mean)
