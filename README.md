@@ -1,13 +1,14 @@
-# Symfony Benchmarks
+# Symfony Micro Benchmarks
 
 ## Running
 Just run:
 
+    sudo apt-get install git docker python-pip && sudo pip install fig
     git clone https://github.com/timglabisch/symfony_performance
     sudo fig build
     sudo fig run --rm symfonyp composer install --prefer-source --no-interaction
     sudo fig run --rm symfonyp composer dump-autoload --optimize
-    sudo fig run --rm symfony app/console generate:bundle
+    sudo fig run --rm symfonyp app/console generate:bundle
     sudo chmod -R 777 symfony/code/app/cache
     sudo chmod -R 777 symfony/code/app/logs
     sudo fig up
