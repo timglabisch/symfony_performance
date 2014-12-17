@@ -1,5 +1,8 @@
 # Symfony Micro Benchmarks
 
+keep in mind micro benchmarks are useless.
+the lession you should learn about this benchmarks is, that a symfony hello world can really depend on the featureset you activate in symfony.
+
 ## Running
 Just run:
 
