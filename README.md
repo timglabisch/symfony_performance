@@ -32,6 +32,11 @@ Just run:
     curl http://127.0.0.1:8080/optimized.php/twigless
     ab -n 5000 -c 20 http://127.0.0.1:8080/optimized.php/twigless
 
+    ## Optimized (just FrameworkBundle + Benchmark Bundle)
+    curl http://127.0.0.1:8080/justFramework.php/twigless
+    ab -n 5000 -c 20 http://127.0.0.1:8080/justFramework.php/twigless
+
+
 
 
 ## Running on my System (AMD Phenom(tm) II X4 955 Processor, MemTotal: 16433348 kB) using Docker + Fig.
@@ -62,3 +67,11 @@ Just run:
     Time per request:       30.354 [ms] (mean)
     Time per request:       1.518 [ms] (mean, across all concurrent requests)
     Transfer rate:          166.01 [Kbytes/sec] received
+
+
+    ab -n 5000 -c 20 http://127.0.0.1:8080/justFramework.php/twigless
+    Requests per second:    716.09 [#/sec] (mean)
+    Time per request:       27.930 [ms] (mean)
+    Time per request:       1.396 [ms] (mean, across all concurrent requests)
+    Transfer rate:          180.42 [Kbytes/sec] received
+
