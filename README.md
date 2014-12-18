@@ -1,9 +1,9 @@
 # Symfony Micro Benchmarks
 
-keep in mind micro benchmarks are useless.
-the lession you should learn about this benchmarks is, that a symfony hello world can really depend on the featureset you activate in symfony.
+Keep in mind micro benchmarks are useless. The lesson you should learn about these benchmarks is, that a Symfony "Hello World" benchmark results can really depend on the featureset you activate in Symfony.
 
 ## Running
+
 Just run:
 
     sudo apt-get install git docker python-pip && sudo pip install fig
@@ -38,9 +38,6 @@ Just run:
     ## Optimized (just FrameworkBundle + Benchmark Bundle)
     curl http://127.0.0.1:8080/justFramework.php/twigless
     ab -n 5000 -c 20 http://127.0.0.1:8080/justFramework.php/twigless
-
-
-
 
 ## Running on my System (AMD Phenom(tm) II X4 955 Processor, MemTotal: 16433348 kB) using Docker + Fig.
 
